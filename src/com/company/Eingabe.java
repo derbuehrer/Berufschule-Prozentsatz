@@ -20,8 +20,7 @@ public class Eingabe {
             zins = sc.nextFloat();
         } catch (InputMismatchException e) {
             // Wenn keine Zahl eingegeben wurde
-            System.out.println("Falsche Eingabe");
-            System.exit(0);
+            fehler();
         }
         this.zins = zins;
     }
@@ -36,9 +35,13 @@ public class Eingabe {
             kapital = sc.nextFloat();
         } catch (InputMismatchException e){
             // Wenn keine Zahl eingegeben wurde
-            System.out.println("Falsche Eingabe");
-            System.exit(0);
+            fehler();
         }
         this.kapital = kapital;
+    }
+    // Eingabefehler werden abgefangen
+    protected void fehler(){
+        System.out.println("Falsche Eingabe");
+        System.exit(0);
     }
 }
